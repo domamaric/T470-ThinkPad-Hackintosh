@@ -16,7 +16,7 @@ USB mapping fixes many sleep related issues, and as such was the main reason beh
 
 For compatibility issues, and avoiding EFI rewriting, it is recommended to boot macOS Ventura (13.x.x). T470 has similar specifications as 13" **MacBook Pro** with Core i5 7360U processor from mid-2017, hence why `macbookpro14,1` SMBIOS is best-fit solution when generating most important Hackintosh info.
 
-All above guides are to be found on Dortania OpenCore installation page with more explanations on why everthing used is as is.
+All above guides are to be found on Dortania OpenCore installation page with more explanations on why everything used is as is.
 
 ## Hardware Specs :computer:
 
@@ -30,7 +30,7 @@ All above guides are to be found on Dortania OpenCore installation page with mor
   
 ## Features :bulb:
 
-- **Dual Battery Support**: Both internal and external batteries are properly recognized and function as expected.
+- **Dual Battery Support**: Both internal and external batteries are properly recognised and function as expected.
 - **Sleep**: System can go to sleep and wake up without any issues.
 - **HDMI**: HDMI works for screen extension and duplication.
 - **Software Updates**: Software updates can be applied via the Mac App Store without issues.
@@ -42,18 +42,20 @@ All above guides are to be found on Dortania OpenCore installation page with mor
 
 ## Installation Instructions :pushpin:
 
-This build supports `OpenCore` 1.0.5 bootloader. **Do not** use it with `Clover`.
+This build supports `OpenCore` 1.0.5 boot-loader. **Do not** use it with `Clover`.
 
 1. **Prerequisites**:
    - A ThinkPad T470 laptop with same specs.
    - A macOS USB installer.
    - A UEFI-compatible boot method.
+   - **Important** [corpnewt GenSMBIOS](https://github.com/corpnewt/GenSMBIOS) for SMIOS configuration as current `config.plist` contains zeros.
 
 2. **Steps**:
    1. Download and extract the latest **OpenCorePkg** version and create a bootable USB installer. Detailed steps are provided in [Dortania OpenCore Install Guide](https://dortania.github.io/OpenCore-Install-Guide/prerequisites.html) which I recommend reading.
-   2. Replace the EFI folder on your USB installer with the one from this repository.
-   3. Boot into the USB installer and perform a fresh macOS installation. When greeted with bootloader, press `SPACE` to display install option (usally named `OPENCORE (dmg)` or `USB DEVICE (dmg)`)
-   4. Once macOS is installed, mount the EFI partition from installation medium to macOS drive. Reboot and boot from the newly installed macOS drive.
+   2. Follow [Dortania OpenCore](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#platforminfo) on how to generate `PlatformInfo`.
+   3. Replace the EFI folder on your USB installer with the one from this repository.
+   4. Boot into the USB installer and perform a fresh macOS installation. When greeted with boot-loader, press `SPACE` to display install option (usually named `OPENCORE (dmg)` or `USB DEVICE (dmg)`).
+   5. Once macOS is installed, mount the EFI partition from installation medium to macOS drive. Reboot and boot from the newly installed macOS drive.
 
 3. **Post-installation**:
    - Make sure to configure any necessary kexts or settings depending on your specific model (such as Wi-Fi and audio).
@@ -63,7 +65,7 @@ This build supports `OpenCore` 1.0.5 bootloader. **Do not** use it with `Clover`
 ## Important Notes :heavy_exclamation_mark:
 
 - This setup is intended for **ThinkPad** hardware. While it may work on other laptops, there is no guarantee of compatibility due system definitions and kexts being tailored for the ThinkPad T470. Other Intel processors would add a bit more context.
-- The `EFI` folder is optimized for use with **OpenCore**. If you’re using **Clover**, you may need to adjust some settings accordingly and pray Ave Maria.
+- The `EFI` folder is optimised for use with **OpenCore**. If you’re using **Clover**, you may need to adjust some settings accordingly and pray Ave Maria.
 
 ## License :clipboard:
 
