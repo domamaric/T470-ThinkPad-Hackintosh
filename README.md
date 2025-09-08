@@ -59,8 +59,15 @@ This build supports `OpenCore` 1.0.5 boot-loader. **Do not** use it with `Clover
 
 3. **Post-installation**:
    - Make sure to configure any necessary kexts or settings depending on your specific model (such as Wi-Fi and audio).
-   - Follow any additional troubleshooting steps if something isn't working right.
-   - (*Optional*, recommended) Enable HiDPI using the [xzhih One-Key-Hidpi](https://github.com/xzhih/one-key-hidpi) to preserve eyesight as UX elements on 1920 x 1080 screen tend to be barely visible.
+   - Follow [OpenCore Post-Install Guide](https://dortania.github.io/OpenCore-Post-Install/#how-to-follow-this-guide). Sleep fixing example:
+     ```sh
+     sudo pmset autopoweroff 0
+     sudo pmset powernap 0
+     sudo pmset standby 0
+     sudo pmset proximitywake 0
+     sudo pmset tcpkeepalive 0
+     ```
+   - (*Optional*) Enable HiDPI using the [xzhih One-Key-Hidpi](https://github.com/xzhih/one-key-hidpi) to preserve eyesight as UX elements on 1920 x 1080 screen tend to be barely visible.
 
 ## Important Notes :heavy_exclamation_mark:
 
