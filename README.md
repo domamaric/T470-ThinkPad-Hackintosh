@@ -10,7 +10,7 @@ Everything has been thoroughly tested (so far) and works out of the box, includi
 
 The difference between my setup and rest I found online, is minimalistic approach without bloated up EFI. Everything inside is there because it **needs** to be there.
 
-Dual battery support is achieved using `SMCBatteryManager` and `ECEnabler` kexts alongside `SSDT-BATX.aml` SSDT. HDMI setup is done under `DeviceProperties` with *framebuffer-con1* patching guide from [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#deviceproperties$0).
+Dual battery support is achieved using `SMCBatteryManager` and `ECEnabler` kexts alongside `SSDT-BATC.aml` SSDT. `YogaSMC` kext adds CPU fan speed measurements and reliable battery readouts (e.g. cycle count). HDMI setup is done under `DeviceProperties` with *framebuffer-con1* patching guide from [Dortania](https://dortania.github.io/OpenCore-Install-Guide/config-laptop.plist/kaby-lake.html#deviceproperties$0).
 
 USB mapping fixes many sleep related issues, and as such was the main reason behind mapping all the ports and internal devices like integrated camera. Graphical loading interface is present to give additional layer to Macintosh similarity.
 
